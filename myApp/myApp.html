@@ -1,0 +1,45 @@
+<head>
+  <title>myApp</title>
+</head>
+
+<body>
+
+
+	{{>hello}}
+
+	{{>input}}
+ 
+  <div style="width:1000px; height:750px; line-height: 3em; overflow:scroll; padding: 5px;">
+  {{>messages}}
+  </div>
+  {{>currentUsers}}
+
+</body>
+
+<template name="hello">
+  <h1> Welcome to Chat Message Blackboard</h1>
+
+	{{loginButtons}}</br></br>
+
+</template>
+
+<template name= "messages">
+	<H1>Message Board</H1>
+  {{#each messages}}
+    <strong>{{name}}:</strong>{{message}}<br>{{time}}: <br>
+    {{/each}}
+
+</template> 
+
+<template name ="input">
+  <p> Message: <input type="text" id="message"></p>
+</template> 
+
+<template name="currentUsers">
+    <p>Current Users: <p> 
+      {{#each Users}}
+        <strong>{{name}}</strong>
+        <p>is online.</p>
+        {{/each}}
+</template>
+
